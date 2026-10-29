@@ -1,0 +1,4 @@
+# third-party skill kept locally only (no licence to redistribute)
+vendor/
+.DS_Store
+node_modules/

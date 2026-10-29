@@ -1,0 +1,8 @@
+#!/bin/bash
+# بايثون فيه numpy لخط المعالجة: يستخدم أول بيئة متاحة.
+for p in "$HOME/.venvs/montage-studio/bin/python3" "$HOME/.venvs/claude-video/bin/python3"; do
+  [ -x "$p" ] && exec "$p" "$@"
+done
+python3 -c "import numpy" 2>/dev/null && exec python3 "$@"
+echo "لا يوجد بايثون فيه numpy — شغّل: ~/.claude/skills/montage-studio/scripts/install.sh" >&2
+exit 1
